@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Details</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'contact.css' %}">
+</head>
+<body>
+<div class="cusform">
+    <h1>Customer Details</h1>
+</div>
+<div class="main">
+<form method="post" action="/cust_detail">
+    {% csrf_token %}
+
+<div class="container center">
+    <div class="mb-2">
+        <label for="exampleFormControlInput1" class="form-label">Name</label><br>
+  <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="Enter your full name" required>
+</div>
+
+    <div class="mb-2">
+  <label for="exampleFormControlInput1" class="form-label">EMAIL ADDRESS</label><br>
+  <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="Enter your email-address" required>
+</div>
+       <div class="mb-2">
+  <label for="exampleFormControlInput1" class="form-label">Phone number</label><br>
+  <input type="tel" class="form-control" id="exampleFormControlInput1" maxlength="10" name="phone" placeholder="Enter your phone number" required>
+</div>
+<div class="mb-2">
+  <label for="exampleFormControlInput1" class="form-label">ADDRESS</label><br>
+  <textarea class="form-control" id="exampleFormControlInput1" name="address" rows="2" placeholder="Enter your full address" required></textarea>
+</div>
+      <div class="mb-2">
+  <label for="exampleFormControlInput2" class="form-label">PIN CODE</label><br>
+
+  <input type="tel" class="form-control" id="exampleFormControlInput2" maxlength="10" name="pin" placeholder="Pin Code" required>
+</div>
+<div class="lab">
+    <label>STATE</label>
+     <select name="state">
+          <option name="state">Uttar Pradesh</option>
+          <option name="state">Bihar</option>
+          <option name="state">Jharkhand</option>
+          <option name="state">Madhya Pradesh</option>
+        </select>
+</div>
+<div class="tomer">
+    <h2>Mode Of Payment ?</h2>
+         <label class="radio">
+<input type="radio" class="radio-one" name="radio1" checked="checked">
+        <span class="checkmark"></span>
+        Cash On Delivery
+     </label>
+<label class="radio">
+<input type="radio" class="radio-two" name="radio2">
+        <span class="checkmark"></span>
+        Online Payment
+</label>
+
+
+
+
+
+</div>
+<button type="submit">Submit</button>
+</div>
+</form>
+</div>
+
+</body>
+</html>

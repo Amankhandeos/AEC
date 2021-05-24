@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %}Labour{% endblock title %}
+{% block body %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'base.css' %}">
+<div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <a id="GFG" href="/payment1">
+          <div class="card shadow-sm">
+            <img src="https://source.unsplash.com/1600x1000/?workers" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h1 class="card-text">Farm workers</h1>
+                <p class="text">farm workers with their families having 3 to 4 members each.</p>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a id="GFG" href="#">
+          <div class="card shadow-sm">
+          <img src="https://source.unsplash.com/1600x1000/?egg tray" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h1 class="card-text">Single Farm worker</h1>
+                <p class="text">Hardworking single worker with no family</p>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="col">
+        <a id="GFG" href="#">
+          <div class="card shadow-sm">
+          <img src="https://source.unsplash.com/1600x1000/?egg shop" class="d-block w-100" alt="...">
+            <div class="card-body">
+              <h1 class="card-text">Electrician</h1>
+            </div>
+          </div>
+        </a>
+        </div>
+
+        <div class="col">
+        <a id="GFG" href="#">
+          <div class="card shadow-sm">
+         <img src="https://source.unsplash.com/1600x1000/?animal feed" class="d-block w-100" alt="...">
+
+            <div class="card-body">
+              <h1 class="card-text">Cage workers</h1>
+
+            </div>
+          </div>
+        </a>
+        </div>
+      </div>
+    </div>
+</div>
+
+{% endblock body %}
