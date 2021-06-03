@@ -13,12 +13,12 @@ class Contact(models.Model):
 
 class Order_detail(models.Model):
     state_region=((0,'Uttar Pradesh'),(1,'Madhya Pradesh'),(2,'Jharkhand'),(3,"Bihar"))
-    Payment_mode=((0,"cash on delivery"),(1,"online payment"))
+   # Payment_mode=((0,"cash on delivery"),(1,"online payment"))
     name = models.CharField(max_length=122)
     email = models.CharField(max_length=122)
     phone = models.CharField(max_length=12)
     address = models.TextField()
     pin=models.CharField(max_length=10)
-    state=models.CharField(max_length=20,choices=state_region,default=0)
-    radio=models.CharField(max_length=20,choices=Payment_mode,default=0)
+    state=models.CharField(max_length=20,default="",editable=True,choices=state_region)
+    radio=models.CharField(max_length=20,default="",editable=True)
     date = models.DateField()

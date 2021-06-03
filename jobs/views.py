@@ -115,7 +115,7 @@ def order_detail(request):
           pin=request.POST.get('pin')
           state=request.POST.get('state')
           radio=request.POST.get('radio')
-          order_detail = Order_detail(name=name, email=email, phone=phone, address=address, pin=pin,
+          order_detail = Order_detail(name=name, email=email, phone=phone, address=address, pin=pin,radio=radio,state=state,
                                         date=datetime.today())
           order_detail.save()
 
