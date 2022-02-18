@@ -5,6 +5,10 @@ font-family: sans-serif;
 background: #34495e;
 }
 
+.alert{
+background-color:#f44336;
+}
+
 .form-signin{
 width: 300px;
 padding: 40px;

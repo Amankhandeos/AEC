@@ -8,26 +8,29 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <link rel="stylesheet" href="{% static 'payment1.css' %}">
-
 <div class="album py-5 bg-light">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
     <div class="col">
-      <img src="https://source.unsplash.com/1600x1000/?workers" alt="comming soon" width="100%">
+      <img src="{{product.image.url}}" alt="comming soon" width="100%">
     </div>
     <div class="col">
       <h4>Home / Hire Worker</h4>
-      <h1>Skill Farm Labour</h1>
-      <h6>12000 Rs</h6>
+      <h1>{{product.name}}</h1>
+      <h6>Rs.{{product.price}} <small class="fw-light text-decoration-line-through">Rs.{{product.selling_price}}</small></h6>
+      <form action="{% url 'payment1' %}" method="POST">
+        {% csrf_token %}
       <h6>
-        <select>
-          <option>select no. of families</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
+        <select name="quantity">
+          <option name="quantity" value="None">select quantity</option>
+          <option name="quantity" value="1">1</option>
+          <option name="quantity" value="2">2</option>
+          <option name="quantity" value="3">3</option>
         </select>
-        <input type="button" id="rzp-button1" class="buton" value="Hire Now"  onclick="window.location.href='/cust_detail'">
+        <input type="Submit" id="rzp-button1" class="buton" value="Hire Now">
       </h6>
-      <form action="https://www.example.com/payment/success/" method="POST">
+      </form>
+
+  <!---    <form action="https://www.example.com/payment/success/" method="POST">
       <script
     src="https://checkout.razorpay.com/v1/checkout.js"
     data-key="rzp_test_zetAEowGnXXHd7"
@@ -46,10 +49,10 @@
           rzp1.open();
           e.preventDefalut();
           }</script>
-      </form>
+      </form> !-->
       <h4>Product Detail</h4>
       <div class="contain">
-      <h6>This deal contains experienced hard working farm workers.<br>
+      <h6>{{product.description}} This deal contains experienced hard working farm workers.<br>
         which are not from your district or city.They are more<br>
           productive within affordable price.
       </h6>
@@ -57,68 +60,35 @@
     </div>
   </div>
 </div>
+
  <div class="album py-5 bg-light">
     <div class="container">
 <h2 class="title">Related Products</h2>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
+        {% for l in labour %}
         <div class="col">
 
-          <a id="GFG" href="/labour">
+          <a id="GFG" href="{% url 'payment1' l.id %}">
           <div class="card shadow-sm">
-            <img src="https://source.unsplash.com/1600x1000/?workers" class="d-block w-100" alt="...">
+            <img src="{{l.image.url}}" class="d-block w-100" alt="...">
 
-              <h4 class="card-text">Single Labour</h4>
+              <h4 class="card-text">{{l.name}}</h4>
               <div class="rating">
               <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
               </div>
-            <p>8000 rs
+            <p>Rs.{{l.price}}</p>
 
           </div>
           </a>
         </div>
+        {% endfor %}
 
-        <div class="col">
-          <a id="GFG" href="#">
-          <div class="card shadow-sm">
-          <img src="https://source.unsplash.com/1600x1000/?egg tray" class="d-block w-100" alt="...">
-            <div class="card-body">
 
-              <h4 class="card-text">Electrician</h4>
-              <div class="rating">
-              <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-            <p>500 rs/day
-
-            </div>
-          </div>
-          </a>
-        </div>
-
-        <div class="col">
-        <a id="GFG" href="#">
-          <div class="card shadow-sm">
-          <img src="https://source.unsplash.com/1600x1000/?egg shop" class="d-block w-100" alt="...">
-            <div class="card-body">
-             <h4 class="card-text">Cage Makers</h4>
-              <div class="rating">
-              <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-            <p>20000 rs/1000 birds
-            </div>
-          </div>
-        </a>
-        </div>
       </div>
     </div>
  </div>
+
        {% endblock body %}

@@ -7,53 +7,21 @@
     <div class="container">
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for l in labour %}
         <div class="col">
-          <a id="GFG" href="/payment1">
+          <a id="GFG" href="{% url 'payment1' l.id %}">
           <div class="card shadow-sm">
-            <img src="https://source.unsplash.com/1600x1000/?workers" class="d-block w-100" alt="...">
+            <img src="{{l.image.url}}" class="d-block w-100" alt="...">
             <div class="card-body">
-              <h1 class="card-text">Farm workers</h1>
-                <p class="text">farm workers with their families having 3 to 4 members each.</p>
+              <h1 class="card-text">{{l.name}}</h1>
+              <h4 class="card-text">Rs.{{l.price}}</h4>
+                <h6 class="text">{{l.description}}</h6>
             </div>
           </div>
           </a>
         </div>
+        {% endfor %}
 
-        <div class="col">
-          <a id="GFG" href="#">
-          <div class="card shadow-sm">
-          <img src="https://source.unsplash.com/1600x1000/?egg tray" class="d-block w-100" alt="...">
-            <div class="card-body">
-              <h1 class="card-text">Single Farm worker</h1>
-                <p class="text">Hardworking single worker with no family</p>
-            </div>
-          </div>
-          </a>
-        </div>
-
-        <div class="col">
-        <a id="GFG" href="#">
-          <div class="card shadow-sm">
-          <img src="https://source.unsplash.com/1600x1000/?egg shop" class="d-block w-100" alt="...">
-            <div class="card-body">
-              <h1 class="card-text">Electrician</h1>
-            </div>
-          </div>
-        </a>
-        </div>
-
-        <div class="col">
-        <a id="GFG" href="#">
-          <div class="card shadow-sm">
-         <img src="https://source.unsplash.com/1600x1000/?animal feed" class="d-block w-100" alt="...">
-
-            <div class="card-body">
-              <h1 class="card-text">Cage workers</h1>
-
-            </div>
-          </div>
-        </a>
-        </div>
       </div>
     </div>
 </div>

@@ -5,6 +5,10 @@ font-family: sans-serif;
 background: #34495e;
 }
 
+.alert{
+background-color:#f44336;
+}
+
 .validate h1{
 color: white;
 text-transform: uppercase;

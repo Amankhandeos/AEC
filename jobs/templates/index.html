@@ -54,8 +54,9 @@
     <div class="container">
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
         <div class="col">
-          <a id="GFG" href="/labour">
+          <a id="GFG" href="{% url 'labour' 'labour' %}">
           <div class="card shadow-sm">
             <img src="https://source.unsplash.com/1600x1000/?workers" class="d-block w-100" alt="...">
 
@@ -66,7 +67,7 @@
         </div>
 
         <div class="col">
-          <a id="GFG" href="#">
+          <a id="GFG" href="{% url 'labour' 'tray' %}">
           <div class="card shadow-sm">
           <img src="https://source.unsplash.com/1600x1000/?egg tray" class="d-block w-100" alt="...">
 

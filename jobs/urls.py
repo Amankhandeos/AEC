@@ -1,17 +1,20 @@
 from django.urls import path
-from . import views
+from .views import About,Contact,home,Labour,Login,Logout,Order_details,Payment,Register,Services,checkout
 
 urlpatterns = [
-    path('',views.index,name='index'),
-    path('login',views.loginuser,name='login'),
+    path('',home.index,name='index'),
+    path('login',Login.loginuser,name='login'),
     #here the empty quotes represent the default path of the server index that is 127.0.0.1.8000
-    path('about',views.about,name='about'),
-    path('contact',views.contact,name='contact'),
-    path('services',views.services,name='services'),
+    path('about',About.about,name='about'),
+    path('contact',Contact.contact,name='contact'),
+    path('services',Services.services,name='services'),
 
-    path('logout',views.logoutuser,name='logout'),
-    path('register',views.register,name='register'),
-    path('labour',views.labour,name='labour'),
-    path('payment1',views.payment1,name='payment1'),
-    path('cust_detail',views.order_detail,name='customer_detail')
+    path('logout',Logout.logoutuser,name='logout'),
+    path('register',Register.register,name='register'),
+    path('labour/<slug:data>',Labour.labour,name='labour'),
+    path('payment1',Payment.payment1,name='payment1'),
+    path('payment1/<int:pk>',Payment.payment1,name='payment1'),
+    path('cust_detail',Order_details.order_detail,name='customer_detail'),
+    path('check-out',checkout.checkout,name='checkout')
+
 ]

@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.conf.urls.static import static
+from django.conf import settings
 
 admin.site.site_header = "Alladin Adminstration"
 admin.site.site_title = "Alladin Admin login"
@@ -22,5 +24,6 @@ admin.site.index_title = "Welcome to Alladin Egg Corporation"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('jobs.urls'))
-]
+    path('captcha/',include('captcha.urls')),
+    path('',include('jobs.urls')),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

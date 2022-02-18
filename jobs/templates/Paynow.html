@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Payment</title>
+</head>
+<body>
+      <form action="https://www.example.com/payment/success/" method="POST">
+      <script
+    src="https://checkout.razorpay.com/v1/checkout.js"
+    data-key="rzp_test_zetAEowGnXXHd7"
+    data-amount="29935"
+    data-currency="INR"
+    data-order_id="{{payment.id}}"
+    data-buttontext="Pay with Razorpay"
+    data-name="Acme Corp"
+    data-description="A Wild Sheep Chase is the third novel by Japanese author Haruki Murakami"
+    data-image="https://example.com/your_logo.jpg"
+    data-prefill.name=""
+    data-prefill.email=""
+    data-theme.color="#F37254"
+      >  var rzp1= new Razorpay(options);
+    document.getElementById('rzp-button1').onclick=function(e){
+          rzp1.open();
+          e.preventDefalut();
+          }</script>
+      </form>
+</body>
+</html>

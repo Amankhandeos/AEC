@@ -26,12 +26,12 @@ text-align: center;
 border-radius: 15px 15px 0px 0px;
 }
 
-.main{
+.master1{
 background-color:rgb(0,0,0,0.5);
 width: 800px;
 margin: auto;
 }
-form{
+.my_form{
 padding: 10px;
 }
 .form-label{
