@@ -26,7 +26,7 @@ def order_detail(request):
           id = request.session.get('product_id')
           Quantity = request.session.get('quantity')
           print(customer)
-
+          # i have added some intregations 
 
           order_detail = Orderdetail(product_id=id, quantity=Quantity, name=name, email=email, phone=phone,
                                      address=address, pin=pin, radio=radio, state=state, username=customer,
