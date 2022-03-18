@@ -1,10 +1,14 @@
 from django.contrib import admin
 from jobs.models import Contact,Orderdetail,User,Product_detail,Categorie
 # Register your models here
+
+#@admin.register(Contact)  you can also register your model using decorator
+
 class Admin_Product(admin.ModelAdmin):
     list_display=['id','product_id','name','price','category']
 class Admin_Categorie(admin.ModelAdmin):
     list_display = ['id','name']
+
 
 admin.site.register(Contact)
 admin.site.register(Orderdetail)
